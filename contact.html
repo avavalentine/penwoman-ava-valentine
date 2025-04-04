@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact PAV | Ava Valentine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="author-notes.html">Author Notes</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Contact the Chaos</h1>
+    <p class="tagline">Scream. Confess. Break. She’s listening.</p>
+
+    <form class="contact-form" onsubmit="showReply(event)">
+      <label for="name">Name (or Alias of Pain)</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email (for the ghosts to reach you)</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message (Scream into the void)</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit" class="enter-button">Send the Chaos</button>
+    </form>
+
+    <p id="reply-message" class="hidden-response">
+      Your scream has been added to the chorus of the damned.<br>
+      PAV will reply when the stars align and her wine runs out.
+    </p>
+
+    <div class="social-links">
+      <p>🖤 Follow the wreckage:</p>
+      <a href="https://www.wattpad.com/user/avavalentine" target="_blank">Wattpad</a> |
+      <a href="https://github.com/avavalentine" target="_blank">GitHub</a>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html" class="enter-button">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    function showReply(event) {
+      event.preventDefault();
+      document.querySelector('#reply-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
