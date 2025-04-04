@@ -1,0 +1,260 @@
+/* =============== FONT & RESET =============== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: url('assets/backgrounds/blood-drip-wallpaper.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #f0e6f6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =============== CONTAINER =============== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* =============== NAVBAR =============== */
+.navbar {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ff00c8;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.navbar a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.navbar a:hover {
+  color: #ff004c;
+}
+
+/* =============== HEADERS =============== */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #f6e1fa;
+  text-shadow: 2px 2px 8px #000;
+  margin-bottom: 1rem;
+}
+
+h1.glitch {
+  position: relative;
+  font-size: 3rem;
+  color: white;
+}
+h1.glitch::before,
+h1.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+h1.glitch::before {
+  animation: glitchTop 1.5s infinite linear alternate-reverse;
+  color: #ff00c8;
+  top: -2px;
+}
+h1.glitch::after {
+  animation: glitchBottom 2s infinite linear alternate-reverse;
+  color: #00fff9;
+  top: 2px;
+}
+
+/* =============== TAGLINE =============== */
+.tagline {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #caa6df;
+  margin-bottom: 2rem;
+}
+
+/* =============== BUTTONS =============== */
+.enter-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: #6f00ff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.enter-button:hover {
+  background: #ff004c;
+  color: #000;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* =============== BOOK LIST =============== */
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.book {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ff00c8;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 10px #ff00c8;
+}
+.book a {
+  color: #caa6df;
+  text-decoration: underline;
+}
+.book a:hover {
+  color: #ff004c;
+}
+
+/* =============== FORMS =============== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #ffccf9;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #6f00ff;
+  background: #222;
+  color: #fff;
+}
+
+.hidden-response {
+  display: none;
+  margin-top: 20px;
+  font-style: italic;
+  color: #caa6df;
+}
+.contact-form.sent + #reply-message {
+  display: block;
+}
+
+/* =============== NOTES / DUNGEON / 404 =============== */
+.notes-box,
+.dungeon-box,
+.bio-box,
+.page-404 {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-left: 6px solid #ff00c8;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px #ff00c8;
+}
+
+/* =============== QUOTES =============== */
+.quote-section ul {
+  list-style-type: '💔 ';
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+.quote-section li {
+  margin: 10px 0;
+}
+
+/* =============== SECRET POP-UP =============== */
+.secret-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 500px;
+  background: rgba(0,0,0,0.95);
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  border: 3px solid #ff00c8;
+  box-shadow: 0 0 20px #ff004c;
+  color: #fff;
+  z-index: 9999;
+  display: none;
+}
+.secret-popup h2 {
+  margin-bottom: 15px;
+}
+.secret-popup button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff004c;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.secret-popup button:hover {
+  background: #ff00c8;
+}
+
+/* =============== ANIMATIONS =============== */
+@keyframes glitchTop {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, -2px); }
+  40% { transform: translate(-5px, 0); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes glitchBottom {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(2px, 2px); }
+  40% { transform: translate(5px, 0); }
+  60% { transform: translate(2px, -2px); }
+  80% { transform: translate(-2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 768px) {
+  h1.glitch {
+    font-size: 2.3rem;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+  .book-list {
+    gap: 1.2rem;
+  }
+  .container {
+    padding: 30px 15px;
+  }
+  .secret-popup {
+    width: 90%;
+    padding: 20px;
+  }
+}
